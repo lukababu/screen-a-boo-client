@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { Route, Switch } from "react-router-dom";
+
+import Home from "./Home";
+import AdultRoom from "./AdultRoom";
+import ToddlerRoom from "./ToddlerRoom";
+
+const useStyles = makeStyles((theme) => ({
+    wrapper: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        width: "100%",
+    },
+}));
+
+const App = () => {
+    const classes = useStyles();
+
+    return (
+        <div className={classes.wrapper}>
+            <Switch>
+                <Route path="/" component={Home} exact />
+                <Route path="/adultroom" component={AdultRoom} />
+                <Route path="/toddlerroom" component={ToddlerRoom} />
+                <Route component={Error} />
+            </Switch>
+        </div>
+    );
+};
 
 export default App;
