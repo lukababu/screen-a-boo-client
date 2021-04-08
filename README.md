@@ -1,9 +1,13 @@
 [See the blog post](https://luke.iremadze.com/2021/04/07/screen-a-boo/)
 
+You will need to have the [server running in tandem.](https://github.com/lukababu/screen-a-boo-server)
+
 # Sources
 
 [React Video Chat App Tutorial - Build and Deploy a WebRTC Video Chat Zoom Clone | Tabnine](https://www.youtube.com/watch?v=oxFr7we3LC8&ab_channel=JavaScriptMastery)
+
 [Bubblegum Sans](https://fonts.google.com/share?selection.family=Bubblegum%20Sans)
+
 [Realistic Curtain Effects](https://speckyboy.com/curtain-effect-web-design/)
 
 # Getting Started with Create React App

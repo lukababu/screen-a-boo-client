@@ -70,7 +70,11 @@ const Home = () => {
         <Paper elevation={0} className={classes.home}>
             <div className={classes.homeTitleContainer}>
                 <Paper variant="outlined" elevation={3}>
-                    <Typography variant="h1" component="h1">
+                    <Typography
+                        variant="h1"
+                        component="h1"
+                        style={{ fontFamily: '"Bubblegum Sans", cursive' }}
+                    >
                         Screen-a-boo
                     </Typography>
                     <Typography variant="h4" component="h4" align="center">
@@ -88,7 +92,11 @@ const Home = () => {
                         color: "#000",
                     }}
                 >
-                    <Typography variant="h2" component="h2">
+                    <Typography
+                        variant="h2"
+                        component="h2"
+                        style={{ fontFamily: '"Bubblegum Sans", cursive' }}
+                    >
                         Join as a toddler
                     </Typography>
                 </Link>
@@ -103,7 +111,11 @@ const Home = () => {
                         color: "#000",
                     }}
                 >
-                    <Typography variant="h2" component="h2">
+                    <Typography
+                        variant="h2"
+                        component="h2"
+                        style={{ fontFamily: '"Bubblegum Sans", cursive' }}
+                    >
                         Join as an adult
                     </Typography>
                 </Link>
