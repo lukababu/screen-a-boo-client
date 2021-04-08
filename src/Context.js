@@ -4,8 +4,8 @@ import Peer from "simple-peer";
 
 const SocketContext = createContext();
 
-const socket = io("http://localhost:5000");
-//const socket = io("https://server.screen-a-boo.luke.iremadze.com");
+//const socket = io("http://localhost:54321");
+const socket = io("https://server.screen-a-boo.luke.iremadze.com");
 
 const ContextProvider = ({ children }) => {
     const [callAccepted, setCallAccepted] = useState(false);
