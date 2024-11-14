@@ -13,13 +13,15 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Set environment variables at build time
+ARG REACT_APP_SOCKET_SERVER_URL
+ENV REACT_APP_SOCKET_SERVER_URL=${REACT_APP_SOCKET_SERVER_URL}
+
 # Run the build command to create production-ready files
 RUN npm run build
 
-# Stage 2: Use a minimal image to hold the built files
-FROM alpine:3.18
+# Expose the port the app runs on
+EXPOSE 3000
 
-# Copy only the build files from the previous stage
-COPY --from=build /usr/src/app/build /app/build
-
-# The final image only contains the build files, without any runtime server
+# Serve the build
+CMD ["npx", "serve", "-s", "build"]
