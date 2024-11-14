@@ -1,4 +1,4 @@
-# Stage 1: Build the application
+# Stage 1: Build the React application
 FROM node:16.20.2-alpine3.18 AS build
 
 # Set the working directory
@@ -16,21 +16,10 @@ COPY . .
 # Run the build command to create production-ready files
 RUN npm run build
 
-
-# Stage 2: Serve the build files
-FROM node:16.20.2-alpine3.18
-
-# Set the working directory for the final stage
-WORKDIR /usr/src/app
+# Stage 2: Use a minimal image to hold the built files
+FROM alpine:3.18
 
 # Copy only the build files from the previous stage
-COPY --from=build /usr/src/app/build ./build
+COPY --from=build /usr/src/app/build /app/build
 
-# Install a simple HTTP server to serve the build files (e.g., `serve`)
-RUN npm install -g serve
-
-# Expose the port the app will run on
-EXPOSE 3000
-
-# Serve the build files
-CMD ["serve", "-s", "build"]
+# The final image only contains the build files, without any runtime server
