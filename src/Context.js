@@ -6,6 +6,8 @@ const SocketContext = createContext();
 
 const socket = io(process.env.REACT_APP_SOCKET_SERVER_URL, { path: "/socket.io" });
 
+console.log("Socket server URL: ", process.env.REACT_APP_SOCKET_SERVER_URL);
+
 const ContextProvider = ({ children }) => {
     const [callAccepted, setCallAccepted] = useState(false);
     const [callEnded, setCallEnded] = useState(false);
